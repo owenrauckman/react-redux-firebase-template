@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { store, rrfProps } from './redux/store';
 import Home from './pages/Home/Index';
-import Dashboard from './pages/Dashboard/Index';
+import Records from './pages/Records/Index';
+import Record from './pages/Record/Index';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <ReactReduxFirebaseProvider {...rrfProps}>
         <Router>
           <Home path="/" />
-          <Dashboard path="/dashboard" />
+          <Records path="/records" />
+          <Record path="/records/:id" />
         </Router>
       </ReactReduxFirebaseProvider>
     </Provider>

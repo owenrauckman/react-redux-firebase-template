@@ -1,16 +1,8 @@
 import React from 'react';
-import { navigate } from '@reach/router';
+import { Link } from '@reach/router';
 
 const Home = () => {
-  return (
-    <div
-      onClick={() => {
-        navigate(`/dashboard`);
-      }}
-    >
-      See Your Todos
-    </div>
-  );
+  return <Link to="records">Go to your records page</Link>;
 };
 
 export default Home;

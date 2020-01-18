@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFirestore } from 'react-redux-firebase';
 
-const NewTodo = () => {
+const AddRecord = () => {
   /* Hooks */
   const [inputValue, onInputChange] = useState(null);
 
@@ -10,19 +10,19 @@ const NewTodo = () => {
 
   /* Local Constants */
   const onNewClick = () => {
-    return firestore.add('todos', {
-      text: inputValue,
-      done: false,
+    return firestore.add('records', {
+      title: inputValue,
+      playCount: 0,
       createdAt: firestore.FieldValue.serverTimestamp()
     });
   };
 
   return (
     <div>
-      <input onChange={e => onInputChange(e.target.value)} type="text" />
+      <input placeholder="Add Record" onChange={e => onInputChange(e.target.value)} type="text" />
       <button onClick={onNewClick}>Submit</button>
     </div>
   );
 };
 
-export default NewTodo;
+export default AddRecord;
