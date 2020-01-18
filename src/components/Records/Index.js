@@ -9,7 +9,8 @@ import AddRecord from '../AddRecord/Index';
 
 const Records = () => {
   /* Firebase Redux */
-  useFirestoreConnect([{ collection: 'records' }]);
+  const auth = useSelector(state => state.firebase.auth);
+  useFirestoreConnect([{ collection: 'records', where: ['userId', '==', auth.uid] }]);
   const records = useSelector(state => state.firestore.ordered.records);
 
   return (

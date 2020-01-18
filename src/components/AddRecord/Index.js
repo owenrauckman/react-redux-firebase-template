@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useFirestore } from 'react-redux-firebase';
 
 const AddRecord = () => {
@@ -7,13 +8,15 @@ const AddRecord = () => {
 
   /* Firebase Redux */
   const firestore = useFirestore();
+  const auth = useSelector(state => state.firebase.auth);
 
   /* Local Constants */
   const onNewClick = () => {
     return firestore.add('records', {
       title: inputValue,
       playCount: 0,
-      createdAt: firestore.FieldValue.serverTimestamp()
+      createdAt: firestore.FieldValue.serverTimestamp(),
+      userId: auth.uid
     });
   };
 
