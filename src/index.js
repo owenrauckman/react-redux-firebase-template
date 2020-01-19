@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider, useSelector } from 'react-redux';
 import { ReactReduxFirebaseProvider, isLoaded, isEmpty } from 'react-redux-firebase';
 import { store, rrfProps } from './redux/store';
-import Home from './pages/Home/Index';
+import Login from './pages/Login/Index';
 import Records from './pages/Records/Index';
 import Record from './pages/Record/Index';
 
@@ -22,7 +22,7 @@ function App() {
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
         <Router>
-          <Home path="/" />
+          <Login path="/" />
         </Router>
         <AuthIsLoaded>
           <Router>
