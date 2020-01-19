@@ -21,13 +21,16 @@ UI pieces are separated into the _pages_ and _components_ folders. Each componen
 
 ## State Management
 
-This app uses redux alongside firebase. _react-redux-firebase_ conveniently binds firebase requests to redux using hooks. However, as your application gets larger, you will likely want to abstract your app-specific state to avoid constant prop drilling. For a given page that needs state management, make a corresponding folder for it inside of the redux folder. Each of these should have actions, initialState, reducers, and types and can be imported and combined in the main reducer in store.js. This will keep your logic broken out into logical pieces and prevent you from making huge, complex files.
+This app uses redux alongside firebase. [react-redux-firebase](https://github.com/prescottprue/react-redux-firebase) and [redux-firestore](https://github.com/prescottprue/redux-firestore) conveniently bind firebase requests to redux using hooks. However, as your application gets larger, you will likely want to abstract your app-specific state to avoid constant prop drilling. For a given page that needs state management, make a corresponding folder for it inside of the redux folder. Each of these should have actions, initialState, reducers, and types and can be imported and combined in the main reducer in store.js. This will keep your logic broken out into logical pieces and prevent you from making huge, complex files.
 
 ## Firebase
 
 This should plug and play with firebase right away--add your firebase config data (found in the dashboard after creating a new Firestore) to src/config/index.js and get to work! Don't forget to add rules to the firebase console to lock down your data before deploying your side-project to the world 🌍.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Depoyment
+Sign up for [Netlify](https://www.netlify.com/), connect it to your GitHub, click a button, and done. Simple as that! 
 
 ---
 
@@ -62,7 +65,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 ### Advanced Configuration
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
